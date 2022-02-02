@@ -31,17 +31,18 @@ body {
     text-align: center;
     align-items: center;
     vertical-align: middle;
-    min-width: 1200px;
-    max-width: 100%;
+    width: 100%;
     padding-top: 35px;
     padding-bottom: 135px;
+    margin-left: auto;
+    margin-right: auto;
     z-index: 0;
 }
 
 .container {
     display: flex;
     position: relative;
-    width: 1200px;
+    max-width: 1200px;
     justify-content: space-between;
     margin-left: auto;
     margin-right: auto;
@@ -77,10 +78,8 @@ body {
     font-size: 13px;
 }
 .menu-icon{
-    display:none;
-    position: absolute;
+    display: none;
 }
-
 .h1-text {
     display: inline-block;
     width: 710px;
@@ -147,6 +146,7 @@ body {
     border-bottom: 2px solid #877c46;
 }
 .trends-card{
+    background-size: cover;
     position: relative;
     display: flex;
     width: calc(25% - 3px);
@@ -425,6 +425,7 @@ body {
 .handwork-cards{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
     max-width: 1200px;
     margin-left: auto;
@@ -436,10 +437,13 @@ body {
     display: flex;
     flex-direction: column;
     width: 350px;
+    margin-bottom: 30px;
+}
+.image-container{
+    padding: 0 25px;
 }
 .shop-item-image{
     width:100%;
-    padding: 0 25px;
 }
 .info-container
 {
@@ -567,40 +571,34 @@ body {
     font-weight: bold;
     font-size: 12px;
 }
-.popup-container::before{
-    position: absolute;
+.popup-container{
+    position: fixed;
     content:"";
     top: 0;
-    bottom: 0;
     left: 0;
-    right: 0;
-    background-color: black;
-    opacity:0.5;
-    z-index:-1;
-}
-.popup{
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
     display: flex;
-    background-color: white;
     flex-direction: column;
-    width: 390px;
-    height: 590px;
-    text-align: left;
-    font-family:OpenSans;
-    padding: 55px 30px;
-    margin: auto;
+    justify-content: center;
+    align-items: center;
     z-index: 1;
 }
-.popup::before{
-    display: inline-block;
-    content:" ";
+.popup-body{
+    display:flex;
+    flex-direction: column;
+}
+.popup-close{
     width: 16px;
-    height: 16px;
-    background-image: url(svg/form-x.svg);
-    background-size: 16px 16px;
+    align-self: end;
+}
+.popup{
+    background-color: white;
+    width: 390px;
+    font-family:OpenSans;
+    padding: 55px 30px;
+    margin-top: 10px;
 }
 .popup-title{
     text-align: center;
@@ -668,17 +666,86 @@ body {
 .feedback-field:focus{
     outline-color: #b59f5b;
 }
-@media (min-width: 641px) and (max-width: 1200px) {
-    .menu-list-item{
-        display:none;
+@media (max-width: 1200px) {
+    .container{
+        padding: 0 5%;
+    }
+    .menu{
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        clip: rect(1px, 1px, 1px, 1px);
     }
     .menu-icon{
         display: inline-block;
-        width: 50px;
-        height: 50px;
+        width: 64px;
+        height: 64px;
         fill: white;
+        margin-left: auto;
     }
-    .menu-list-item:hover{
-        display: inline-block;
+    .trends-cards{
+        margin-bottom: 0;
+    }
+    .trends-card{
+        width: calc(50% - 1px);
+        margin-top: 1px;
+    }
+    .page{
+        padding: 50px 35px;
+    }
+    .main-news{
+        display: flex;
+        flex-direction: column;
+    }
+    .news-image{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .handwork-cards{
+        width: 100%;
+        padding: 0 30px;
+    }
+    .handwork-card{
+        width: calc(50% - 13px);
+    }
+    .footer{
+        width: 100%;
+        padding: 0 30px;
+    }
+}
+@media (max-width: 641px){
+    .container{
+        flex-direction: column-reverse;
+    }
+    .header-logo{
+        width: calc(100% - 16%);
+        align-self: center;
+    }
+    .h1-text{
+        width: calc(100% - 16%);
+    }
+    .h1-title{
+        font-size: 26px;
+        line-height: 36px;
+    }
+    .trends-card{
+        width: 100%;
+        margin-top: 5px;
+    }
+    .trends-card:first-child{
+        margin-top: 0;
+    }
+    .page{
+        flex-direction: column;
+    }
+    .main{
+        width:100%;
+        margin-bottom: 45px;
+    }
+    .page-aside{
+        width:100%;
+    }
+    .handwork-card{
+        width: 100%;
     }
 }

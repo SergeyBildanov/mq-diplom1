@@ -571,9 +571,11 @@
     <div class="handwork-cards">
 
         <div class="handwork-card">
-            <div class="image-container">
-                <img class="shop-item-image" src="images/shop-item-desk1.jpg" alt="Утро у реки">
-            </div>
+            <picture class="image-container">
+            <source class="shop-item-image" srcset="images/shop-item-mobile1.jpg" media="(max-width: 641px)">
+            <source class="shop-item-image" srcset="images/shop-item-tablet1.jpg" media="(max-width: 1200px)">
+            <img class="shop-item-image" src="images/shop-item-desk1.jpg" alt="Красивая подушка">
+        </picture>
             <div class="info-container">
                 <div class="resent-posts-title">
                 <span class="card-title">
@@ -600,9 +602,11 @@
         </div>
 
         <div class="handwork-card">
-            <div class="image-container">
-                <img class="shop-item-image" src="images/shop-item-desk2.jpg" alt="Утро у реки">
-            </div>
+            <picture class="image-container">
+                <source class="shop-item-image" srcset="images/shop-item-mobile2.jpg" media="(max-width: 641px)">
+                <source class="shop-item-image" srcset="images/shop-item-tablet2.jpg" media="(max-width: 1200px)">
+                <img class="shop-item-image" src="images/shop-item-desk2.jpg" alt="Кукла">
+            </picture>
             <div class="info-container">
                 <div class="resent-posts-title">
                 <span class="card-title">
@@ -626,9 +630,11 @@
         </div>
 
         <div class="handwork-card">
-            <div class="image-container">
-                <img class="shop-item-image" src="images/shop-item-desk3.jpg" alt="Утро у реки">
-            </div>
+            <picture class="image-container">
+                <source class="shop-item-image" srcset="images/shop-item-mobile3.jpg" media="(max-width: 641px)">
+                <source class="shop-item-image" srcset="images/shop-item-tablet3.jpg" media="(max-width: 1200px)">
+                <img class="shop-item-image" src="images/shop-item-desk3.jpg" alt="Рамка">
+            </picture>
             <div class="info-container">
                 <div class="resent-posts-title">
                 <span class="card-title">
@@ -656,42 +662,46 @@
 
     </div>
 </div>
-<div class="popup-container">
-    <div class="popup">
-        <div class="popup-title">
+
+<div class="popup-container visually-hidden">
+    <div class="popup-body">
+        <img class="popup-close" src="svg/form-x.svg" alt="x">
+        <div class="popup">
+            <div class="popup-title">
          <span class="h3-title">
-      <h3 class="h3-text">Ваш фидбек</h3>
-    </span>
-        </div>
-
-        <form class="feedback-form">
-            <label class="selection-label">
-                <span >Как часто вы заходите на сайт?</span>
-                <select class="select-list" required>
-                    <option value="">Каждый день</option>
-                    <option value="" selected>Почти каждый день</option>
-                    <option value="">Несколько раз в неделю</option>
-                    <option value="">Раз в неделю</option>
-                    <option value="">Несколько раз в год</option>
-                </select>
-            </label>
-            <span>Вы подписаны на email-рассылку?</span>
-            <div class="radio-buttons">
-                <label>
-                    <input class="radio-button" type="radio" name="radio">
-                    <span class="radio-button-text">Да</span>
-                </label>
-                <label>
-                    <input class="radio-button" type="radio" name="radio">
-                    <span class="radio-button-text">Нет</span>
-                </label>
+        <h3 class="h3-text">Ваш фидбек</h3>
+        </span>
             </div>
-            <span>Расскажите, какой контент вы хотели бы видеть
-на нашем сайте?</span>
-            <textarea class="feedback-field" placeholder="Может больше рецептов?" required></textarea>
-            <button class="email-confirm-button" type="submit">Отправить</button>
 
-        </form>
+            <form class="feedback-form">
+                <label class="selection-label">
+                    <span >Как часто вы заходите на сайт?</span>
+                    <select class="select-list" required>
+                        <option value="">Каждый день</option>
+                        <option value="" selected>Почти каждый день</option>
+                        <option value="">Несколько раз в неделю</option>
+                        <option value="">Раз в неделю</option>
+                        <option value="">Несколько раз в год</option>
+                    </select>
+                </label>
+                <span>Вы подписаны на email-рассылку?</span>
+                <div class="radio-buttons">
+                    <label>
+                        <input class="radio-button" type="radio" name="radio">
+                        <span class="radio-button-text">Да</span>
+                    </label>
+                    <label>
+                        <input class="radio-button" type="radio" name="radio">
+                        <span class="radio-button-text">Нет</span>
+                    </label>
+                </div>
+                <span>Расскажите, какой контент вы хотели бы видеть
+на нашем сайте?</span>
+                <textarea class="feedback-field" placeholder="Может больше рецептов?" required></textarea>
+                <button class="email-confirm-button" type="submit">Отправить</button>
+
+            </form>
+        </div>
     </div>
 </div>
 
